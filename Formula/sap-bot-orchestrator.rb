@@ -11,7 +11,7 @@ class SapBotOrchestrator < Formula
 
   def install
     # Install npm dependencies
-    system "npm", "install", "--ignore-scripts", "--no-audit", "--no-fund"
+    system "npm", "install", *std_npm_args(prefix: false)
     # Build TypeScript
     system "npm", "run", "build"
 
@@ -31,7 +31,7 @@ class SapBotOrchestrator < Formula
       Set the following environment variables:
         - AICORE_SERVICE_KEY (JSON service key) or individual credentials:
         - AICORE_CLIENT_ID
-        - AICORE_CLIENT_SECRET  
+        - AICORE_CLIENT_SECRET
         - AICORE_AUTH_URL
         - AICORE_BASE_URL
         - AICORE_RESOURCE_GROUP
