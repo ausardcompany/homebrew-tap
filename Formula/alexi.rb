@@ -3,7 +3,7 @@ class Alexi < Formula
   homepage "https://github.com/ausardcompany/sap-bot-orchestrator"
   url "https://github.com/ausardcompany/sap-bot-orchestrator.git",
       tag:      "v0.1.0",
-      revision: "8305e311ee639d4b483706ba168fac2c4a434f69"
+      revision: "b4f24bcbb6e7f7f6630fe0a3c7f73e68361adccd"
   license "ISC"
   head "https://github.com/ausardcompany/sap-bot-orchestrator.git", branch: "master"
 
