@@ -1,9 +1,9 @@
-class SapBotOrchestrator < Formula
-  desc "Bot orchestrator with SAP AI Core provider support"
+class Alexi < Formula
+  desc "Intelligent LLM orchestrator with SAP AI Core provider support"
   homepage "https://github.com/ausardcompany/sap-bot-orchestrator"
   url "https://github.com/ausardcompany/sap-bot-orchestrator.git",
       tag:      "v0.1.0",
-      revision: ""
+      revision: "8305e311ee639d4b483706ba168fac2c4a434f69"
   license "ISC"
   head "https://github.com/ausardcompany/sap-bot-orchestrator.git", branch: "master"
 
@@ -18,8 +18,13 @@ class SapBotOrchestrator < Formula
     # Install to libexec
     libexec.install Dir["*"]
 
-    # Create wrapper script
-    (bin/"sap-bot").write <<~EOS
+    # Create wrapper scripts
+    (bin/"alexi").write <<~EOS
+      #!/bin/bash
+      exec "#{Formula["node@22"].opt_bin}/node" "#{libexec}/dist/cli/program.js" "$@"
+    EOS
+
+    (bin/"ax").write <<~EOS
       #!/bin/bash
       exec "#{Formula["node@22"].opt_bin}/node" "#{libexec}/dist/cli/program.js" "$@"
     EOS
@@ -27,7 +32,7 @@ class SapBotOrchestrator < Formula
 
   def caveats
     <<~EOS
-      sap-bot-orchestrator requires SAP AI Core credentials.
+      Alexi requires SAP AI Core credentials.
       Set the following environment variables:
         - AICORE_SERVICE_KEY (JSON service key) or individual credentials:
         - AICORE_CLIENT_ID
@@ -39,6 +44,6 @@ class SapBotOrchestrator < Formula
   end
 
   test do
-    assert_match "SAP AI Core bot orchestrator", shell_output("#{bin}/sap-bot --help")
+    assert_match "alexi", shell_output("#{bin}/alexi --version")
   end
 end
