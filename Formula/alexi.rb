@@ -2,8 +2,8 @@ class Alexi < Formula
   desc "Intelligent LLM orchestrator with SAP AI Core provider support"
   homepage "https://github.com/ausardcompany/sap-bot-orchestrator"
   url "https://github.com/ausardcompany/sap-bot-orchestrator.git",
-      tag:      "v0.1.2",
-      revision: "b2a0984796ef0eb7a9e4ea5be4d9944921b70041"
+      tag:      "v0.1.3",
+      revision: "2fd9ddbc0a2e1a57c1f4e823b7da1acc735f6f71"
   license "ISC"
   head "https://github.com/ausardcompany/sap-bot-orchestrator.git", branch: "master"
 
