@@ -2,23 +2,19 @@ class Alexi < Formula
   desc "Intelligent LLM orchestrator with SAP AI Core provider support"
   homepage "https://github.com/ausardcompany/alexi"
   url "https://github.com/ausardcompany/alexi.git",
-      tag:      "v0.1.10",
-      revision: "1bc6c993ff10d259291db7a0a71cd762bac9a18a"
+      tag:      "v0.2.0",
+      revision: "bfd44e3a4147605e4b41bcbc206603a3c2a5cf25"
   license "ISC"
   head "https://github.com/ausardcompany/alexi.git", branch: "master"
 
   depends_on "node@22"
 
   def install
-    # Install npm dependencies
     system "npm", "install", *std_npm_args(prefix: false)
-    # Build TypeScript
     system "npm", "run", "build"
 
-    # Install to libexec
     libexec.install Dir["*"]
 
-    # Create wrapper scripts
     (bin/"alexi").write <<~EOS
       #!/bin/bash
       exec "#{Formula["node@22"].opt_bin}/node" "#{libexec}/dist/cli/program.js" "$@"
