@@ -3,7 +3,7 @@ class Alexi < Formula
   homepage "https://github.com/ausardcompany/alexi"
   url "https://github.com/ausardcompany/alexi.git",
       tag:      "v1.17.20",
-      revision: "6718b71cec46fdf9d8e12f9014799310ced28d32"
+      revision: "68662eaa2f6b6352494d01aad147bd6278a735d9"
   license "ISC"
   head "https://github.com/ausardcompany/alexi.git", branch: "master"
 
