@@ -2,8 +2,8 @@ class Alexi < Formula
   desc "Intelligent LLM orchestrator with SAP AI Core provider support"
   homepage "https://github.com/ausardcompany/alexi"
   url "https://github.com/ausardcompany/alexi.git",
-      tag:      "v1.18.3",
-      revision: "0690c57e988a63a1f887778bf6ba6af33a657a58"
+      tag:      "v1.18.4",
+      revision: "66b978f630f26d5c1e2f7c8ee430be284a01a296"
   license "ISC"
   head "https://github.com/ausardcompany/alexi.git", branch: "master"
 
